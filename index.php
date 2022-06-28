@@ -7,6 +7,8 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/projeto-web1/controller/router.php");
 // The output -> Index
 get('/', 'view/home/index.php');
 
+get('/login', 'view/login/index.php');
+
 // Dynamic GET. Example with 1 variable
 // The $id will be available in user.php
 //get('/user/$id', 'user.php');

@@ -23,7 +23,7 @@ define("_ROOT_JS_PATH_" , _ROOT_LIB_PATH_ . "/js/");
 define("_ROOT_IMG_PATH_" , _ROOT_LIB_PATH_ . "/img/");
 
 define("_HTTP_ARQUIVO_PATH_", _HTTP_PATH_ . "arquivos/");
-define("_HTTP_LIB_PATH_" , _HTTP_PATH_ . "lib/");
+define("_HTTP_LIB_PATH_" , _HTTP_PATH_ . "projeto-web1/lib/");
 define("_HTTP_CLASS_PATH_" , _HTTP_PATH_ . "model/");
 define("_HTTP_CTRL_PATH_" , _HTTP_PATH_ . "control/");
 define("_HTTP_VIEW_PATH_" , _HTTP_PATH_ . "view/");
