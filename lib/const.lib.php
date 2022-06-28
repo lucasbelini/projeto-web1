@@ -9,18 +9,18 @@ define("_BD_PASS_","");
 define("_BD_PORTA_","3308");
 define("_BD_NAME_","Streaming");
 
-define("_ROOT_PATH_", "/");
+define("_ROOT_PATH_", $_SERVER['DOCUMENT_ROOT']."/projeto-web1");
 define("_HTTP_PATH_", "http://localhost:8012/");
 
 define("_DATA_", date('d-m-Y'));
 
-define("_ROOT_LIB_PATH_", _ROOT_PATH_ . "lib/");
-define("_ROOT_CLASS_PATH_", _ROOT_PATH_ . "model/");
-define("_ROOT_CTRL_PATH_" , _ROOT_PATH_ . "control/");
-define("_ROOT_VIEW_PATH_" , _ROOT_PATH_ . "view/");
-define("_ROOT_CSS_PATH_" , _ROOT_LIB_PATH_ . "css/");
-define("_ROOT_JS_PATH_" , _ROOT_LIB_PATH_ . "js/");
-define("_ROOT_IMG_PATH_" , _ROOT_LIB_PATH_ . "img/");
+define("_ROOT_LIB_PATH_", _ROOT_PATH_ . "/lib/");
+define("_ROOT_CLASS_PATH_", _ROOT_PATH_ . "/model/");
+define("_ROOT_CTRL_PATH_" , _ROOT_PATH_ . "/control/");
+define("_ROOT_VIEW_PATH_" , _ROOT_PATH_ . "/view/");
+define("_ROOT_CSS_PATH_" , _ROOT_LIB_PATH_ . "/css/");
+define("_ROOT_JS_PATH_" , _ROOT_LIB_PATH_ . "/js/");
+define("_ROOT_IMG_PATH_" , _ROOT_LIB_PATH_ . "/img/");
 
 define("_HTTP_ARQUIVO_PATH_", _HTTP_PATH_ . "arquivos/");
 define("_HTTP_LIB_PATH_" , _HTTP_PATH_ . "lib/");
