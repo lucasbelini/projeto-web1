@@ -3,14 +3,14 @@
 header("Content-type: text/html; charset=utf-8");
 session_start();
 //BANCO DE DADOS
-define("_BD_HOST_","localhost:80");
+define("_BD_HOST_","localhost:8012");
 define("_BD_USER_","root");
 define("_BD_PASS_","");
-define("_BD_PORTA_","443");
+define("_BD_PORTA_","3308");
 define("_BD_NAME_","Streaming");
 
 define("_ROOT_PATH_", $_SERVER['DOCUMENT_ROOT']."/projeto-web1");
-define("_HTTP_PATH_", "http://localhost:80/");
+define("_HTTP_PATH_", "http://localhost:8012/");
 
 define("_DATA_", date('d-m-Y'));
 
