@@ -1,4 +1,85 @@
 <?php 
+
+Class Usuario {
+    private $id_usuario;
+    private $nm_usuario;
+    private $psw_usuario;
+    
+    public function getId_usuario(){$this->id_usuario}
+    public function getNm_usuario(){$this->nm_usuario}
+    public function getPsw_usuario(){$this->psw_usuario}
+    
+    public function setId_usuario($id_usuario){$this->id_usuario = $id_usuario}
+    public function setNm_usuario($nm_usuario){$this->nm_usuario = $nm_usuario}
+    public function setPsw_usuario($psw_usuario){$this->psw_usuario = $psw_usuario}
+    
+    public function criarUsuario(Usuario $objUsuario) {
+        $objConexao = new Conexao();
+        $db = $objConexao->conecta();
+        try {
+            $sql = "INSERT INTO Usuarios ("nm_usuario", "psw_usuario")
+                    VALUES (".$objUsuario->getNm_usuario().", ".$objUsuario->getPsw_usuario).");";
+            $res = $db->prepare($sql);
+            $res->execute();
+        }
+        catch (PDOException $e) {
+            Geral::Print_pre($e);
+            Geral::Print_pre($sql);
+            return false;
+        }
+        return true;
+    }    
+    
+    public function listarUsuarios(){
+        $objConexao = new Conexao();
+        $db = $objConexao->conecta();
+        try {
+            $sql = "SELECT *
+                    FROM Usuarios;";
+            $res = $db->prepare($sql);
+            $res->execute();
+        }
+        catch (PDOException $e) {
+            Geral::Print_pre($e);
+            Geral::Print_pre($sql);
+            return false;
+        }
+        $obj = $res->fetch(PDO::FETCH_OBJ);
+        return $obj;
+    }
+    
+    public function lerUsuario(Usuario $objUsuario){
+        $objConexao = new Conexao();
+        $db = $objConexao->conecta();
+        try {
+            $sql = "SELECT *
+                    FROM Usuarios
+                    WHERE id_usuario = " .$objUsuario->getId_usuario(). ";";
+            $res = $db->prepare($sql);
+            $res->execute();
+        }
+        catch (PDOException $e) {
+            Geral::Print_pre($e);
+            Geral::Print_pre($sql);
+            return false;
+        }
+        $obj = $res->fetch(PDO::FETCH_OBJ);
+        $objUsuario = $this->preencherObjeto($obj);
+        return $objUsuario;
+    }
+    
+    function preencherObjeto($obj) {
+        $objusuario = new Usuario();
+
+        $objUsuario->setId_usuario($obj->id_usuario);
+        $objusuario->setNm_usuario($obj->nm_usuario);
+        $objUsuario->setPsw_usuario($obj->psw_usuario);
+
+        return $objUsuario;
+    }
+    
+}
+
 /*
 
 function lerUsuario(Atleta $objAtleta) {
